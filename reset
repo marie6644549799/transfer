@@ -10,69 +10,24 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "[csharp]": {
-    "editor.defaultFormatter": "ms-dotnettools.csharp"
+ {
+  "name": "anything-llm",
+  "version": "0.0.1-beta",
+  "description": "Turn anything into a chattable document through a simple UI",
+  "main": "index.js",
+  "author": "Timothy Carambat (Mintplex Labs)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
   },
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "python.formatting.provider": "autopep8",
-  "python.formatting.autopep8Args": [
-    "--max-line-length=120"
-  ],
-  "notebook.output.textLineLimit": 500,
-  "python.analysis.extraPaths": [
-    "./python/src"
-  ],
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/build": true
+  "scripts": {
+    "lint": "cd server && yarn lint && cd .. && cd frontend && yarn lint",
+    "setup": "cd server && yarn && cd .. && yarn setup:envs && echo \"Please run yarn dev:server and yarn dev:frontend in separate terminal tabs.\"",
+    "setup:envs": "cd server && cp -n .env.example .env.development && cd ../collector && cp -n .env.example .env && cd ..",
+    "dev:server": "cd server && yarn dev",
+    "dev:frontend": "cd frontend && yarn start",
+    "prod:server": "cd server && yarn start",
+    "prod:frontend": "cd frontend && yarn build"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true,
-      "source.fixAll": true
-    }
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true,
-      "source.fixAll": true
-    }
-  },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "eslint.enable": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "eslint.lintTask.enable": true,
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ],
-  "eslint.options": {
-    "overrideConfigFile": ".eslintrc.js"
-  },
-  "eslint.packageManager": "yarn",
-  "files.associations": {
-    "*.json": "jsonc"
-  },
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true
-  },
-  "cSpell.words": [
-    "Partitioner"
-  ]
+  "private": false
 }
