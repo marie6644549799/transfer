@@ -21,8 +21,3 @@ void main(List<String> arguments) async {
 
   Token tok = lexer.nextToken();
 
-  while (tok.type != TokenType.eof) {
-    print(tok);
-    tok = lexer.nextToken();
-  }
-}
