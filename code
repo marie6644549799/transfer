@@ -26,8 +26,6 @@ trainings:
       The 4 ways threat hunters most commonly transform data to spot anomalies
       My two-step system for effective note taking while hunting
      tags: threat-hunting, security monitoring
-     duration: 22
-     price: 647 USD
      type:
       - self-paced
    - title: Detection Engineering with Sigma
